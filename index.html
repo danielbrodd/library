@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="/script.js" defer></script>
+    <title>Library</title>
+</head>
+<body>
+        <div id="side-menu" class="side-menu">
+            <h2 class="addBookText">Add book</h2>
+            <form class="newBook">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <input type="text" name="title" id="title">
+                <input type="text" name="author" id="author">
+                <input type="number" name="pages" id="pages">
+                <div class="checkBox">
+                    <label id="checkText">Have you read it?</label>
+                    <label class="container">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <button class="save">Save</button>
+            </form>
+        </div>
+    <main>
+        <div class="banner">
+            <h1>Library</h1>
+        </div>
+        <table class="table">
+            <tr>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+        </table>
+        <button onclick="openNav()" class="addBookBtn">Add book</button>
+    </main>
+</body>
+</html>
