@@ -5,36 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="/script.js" defer></script>
     <title>Library</title>
 </head>
 <body>
-        <div id="side-menu" class="side-menu">
-            <h2 class="addBookText">Add book</h2>
-            <form class="newBook">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <input type="text" name="title" id="title">
-                <input type="text" name="author" id="author">
-                <input type="number" name="pages" id="pages">
-                <div class="checkBox">
-                    <label id="checkText">Have you read it?</label>
-                    <label class="container">
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-                <button class="save">Save</button>
-            </form>
-        </div>
+    <div id="side-menu" class="side-menu">
+        <h2 class="addBookText">Add book</h2>
+        <form class="newBook">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title">
+            <label for="author">Author</label>
+            <input type="text" name="author" id="author">
+            <label for="pages">Pages</label>
+            <input type="number" name="pages" id="pages">
+            <div class="checkBox">
+                <label id="checkText">Have you read it?</label>
+                <label class="container">
+                    <input type="checkbox" name="isread" value="true">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <button class="save">Save</button>
+        </form>
+    </div>
     <main>
         <div class="banner">
             <h1>Library</h1>
         </div>
-        <table class="table">
-           <thead></thead>
-           <tbody></tbody>
-        </table>
-        <button onclick="openNav()" class="addBookBtn">Add book</button>
+        <div class="form-div">
+            <table class="table" >
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Pages</th>
+                        <th>Read</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <button onclick="openNav()" class="addBookBtn" type="submit">Add book</button>
     </main>
 </body>
+<script src="script.js" defer></script>
 </html>

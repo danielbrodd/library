@@ -1,5 +1,6 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
+    /* box-sizing: border-box; */
 }
 body {
     margin: 0;
@@ -9,7 +10,7 @@ body {
 /* SIDE MENU AND FORM */
 .side-menu {
     background-color: black;
-    width: 0;
+    width: 300px;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -18,11 +19,15 @@ body {
     position: fixed;
     z-index: 1;
     top: 0;
-    left: 0;
+    left: -300px;
+    right: 0;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
 
+}
+.side-menu.open {
+  left:0;
 }
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
@@ -31,6 +36,9 @@ body {
 .side-menu h2 {
     color: white;
 
+}
+.side-menu label {
+  color: white;
 }
 .side-menu .closebtn {
     position: absolute;
@@ -185,34 +193,46 @@ input::-webkit-inner-spin-button {
   .save:active {
     transform:scaleX(0.95) scaleY(0.95);
   }
-  @media screen and (max-height: 450px) {
+  @media screen and (max-width: 450px) {
     .side-menu {padding-top: 15px;}
-    .side-menu a  {font-size: 18px;}
-    .side-menu input  {font-size: 18px;}
+    .side-menu a  {font-size: 15px;}
+    .side-menu input  {font-size: 15px;}
     .addBookBtn {padding: 5px 16px;}
- 
+    .rmvBtn {width: 10px; font-size: 1rem;}
   }
 
   /* MAIN */
 
   main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: margin-left 0.5s;
+    
+    transition: transform 0.5s;
+    width: 100%;
+    position: fixed;
+    height: 100%;
+
+
+  }
+  main.shift {
+    transform: translateX(300px);
   }
   .banner {
     height: 100px;
-    width: 100%;
+    width:100%;
     background-color: black;
     color: white;
     text-align: center;
     
   }
+  .banner > h1 {
+    margin: 0 auto;
+    padding-top: 20px;
+    width: fit-content;
+  }
 
   .addBookBtn {
     padding: 8px 20px;
-    margin-top: 50px;
+    margin: 50px auto 0;
+    display: block;
     border-radius: 30px;
     border: 3px solid black;
     background-color: white;
@@ -229,4 +249,67 @@ input::-webkit-inner-spin-button {
 
 .addBookBtn:active {
     transform: scale(0.95);
+}
+.form-div {
+  margin: 0;
+  overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.table {
+
+  max-width: calc(100% - 20px);
+  overflow-x: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+  margin-top: 10px;
+  width: 100%;
+  table-layout: fixed;
+}
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+th {
+  background-color: black;
+  color: white;
+}
+tr:nth-child(even) {
+  background-color: #222;
+  color: white;
+}
+
+.rmvBtn {
+  padding: 6px 15px;
+
+  display: block;
+  border-radius: 30px;
+  border: 3px solid black;
+  background-color: transparent;
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: .3s ease;
+}
+tr:nth-child(even) .rmvBtn{
+  border-color: white;
+  color: white;
+
+}
+
+.rmvBtn:hover {
+  background-color: black;
+  color: white;
+}
+
+tr:nth-child(even) .rmvBtn:hover{
+  border-color: white;
+  background-color: white;
+  color: black;
+
+}
+.rmvBtn:active {
+  transform: scale(0.93);
 }
