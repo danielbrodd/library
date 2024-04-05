@@ -1,11 +1,13 @@
 const library = []
-
-function Book(titel, author, pages, isread) {
-    this.titel = titel,
-    this.author = author,
-    this.pages = pages,
-    this.isread = Boolean(isread)
+class Book {
+    constructor (titel, author, pages, isread) {
+        this.titel = titel,
+        this.author = author,
+        this.pages = pages,
+        this.isread = Boolean(isread)
+    }
 }
+
 let testBook1 = new Book('Hobbit','J.R.R Tolkien', 295, false);
 
 const test_book = new Book('test', 'tester Mctester', 1, false);
