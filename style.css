@@ -313,3 +313,7 @@ tr:nth-child(even) .rmvBtn:hover{
 .rmvBtn:active {
   transform: scale(0.93);
 }
+
+.error {
+  border: 1px #ab274f solid;
+}
